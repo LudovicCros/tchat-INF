@@ -1,9 +1,9 @@
 /*
- * Serveur.h
- *
- *  Created on: 27 oct. 2017
- *      Author: infi
- */
+* Serveur.h
+*
+*  Created on: 27 oct. 2017
+*      Author: infi
+*/
 
 #ifndef SERVEUR_H_
 #define SERVEUR_H_
@@ -21,6 +21,10 @@ public:
 	int connexion(string user, string pass);
 	void receiveMessage();
 	void sendMessages(string message);
+	int getPort();
+	string getIP();
+	void validIP();
+	void validPort();
 	virtual ~Serveur();
 
 private:
