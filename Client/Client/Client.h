@@ -3,7 +3,7 @@
 
 #include <string>
 #include <vector>
-
+const int NMAX = 200;
 using namespace std;
 
 class Client {
