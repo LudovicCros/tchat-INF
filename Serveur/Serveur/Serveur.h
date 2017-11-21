@@ -1,5 +1,3 @@
-
-
 #ifndef SERVEUR_H_
 #define SERVEUR_H_
 
@@ -36,3 +34,4 @@ private:
 };
 
 #endif /* SERVEUR_H_ */
+
