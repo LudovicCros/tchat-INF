@@ -4,6 +4,9 @@
 #include <string>
 #include <vector>
 const int NMAX = 200;
+const int USERMAX = 30;
+const int MAXMESSAGE = NMAX + USERMAX;
+
 using namespace std;
 
 class Client {
@@ -11,8 +14,8 @@ class Client {
 public:
 	Client();
 	void enterInformation();
-	void receiveMessage();
-	void sendMessage(string message);
+	string receiveMessage();
+	int sendMessage(string message);
 	int getPort();
 	string getHost();
 	void validIP();
@@ -26,6 +29,7 @@ private:
 	vector<string> messages;
 	string host;
 	int port;
+	SOCKET sock;
 };
 
 #endif /* CLIENT_H_ */
