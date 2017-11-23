@@ -53,7 +53,9 @@ private:
 	SOCKET rsock;
 	vector<Client> users;
 	SOCKADDR_IN rsin;
-	mutex verrou;
+	mutex verrouVectorUsers;
+	mutex verrouVectorMessages;
+	mutex verrouFichier;
 };
 
 #endif /* SERVEUR_H_ */
