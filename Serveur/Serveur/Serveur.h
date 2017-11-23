@@ -51,6 +51,7 @@ public:
 	virtual ~Serveur();
 	int createUser(vector<string> userInfos);
 	void addUser(ThreadParam p, string userName);
+	void deconnexion(string user);
 	string addEntete(string user);
 
 private:
