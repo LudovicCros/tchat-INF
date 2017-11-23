@@ -34,6 +34,7 @@ public:
 	void enterInformation();
 	void waitConnexion();
 	vector<string> identification(SOCKET sock);
+	int isLoginOk(vector<string> userInfos);
 	int connexion(string user, string pass);
 	string receiveMessage(int index);
 	int sendMessages(string message);
@@ -43,6 +44,7 @@ public:
 	void validIP();
 	void validPort();
 	virtual ~Serveur();
+	int Serveur::addUser(vector<string> userInfos, SOCKET* sd);
 
 private:
 	vector<string> messages;
