@@ -8,6 +8,7 @@
 #include <strstream>
 #include <iostream>
 #include <mutex>
+#include <map>
 #pragma comment( lib, "ws2_32.lib" )
 
 const int NMAX = 200;
@@ -21,11 +22,15 @@ class Serveur;
 typedef struct {
 	SOCKET* sock;
 	string name;
+	string ipClient;
+	string portClient;
 }Client;
 
 typedef struct {
 	SOCKET* sock;
 	Serveur* serv;
+	string ipClient;
+	string portClient;
 }ThreadParam;
 
 class Serveur {
@@ -36,26 +41,29 @@ public:
 	vector<string> identification(SOCKET sock);
 	int isLoginOk(vector<string> userInfos);
 	int connexion(string user, string pass);
-	string receiveMessage(int index);
+	string receiveMessage(string user);
 	int sendMessages(string message);
-	int sendMessage(int index, string message);
+	int sendMessage(string user, string message);
 	int getPort();
 	string getHost();
 	void validIP();
 	void validPort();
 	virtual ~Serveur();
-	int Serveur::addUser(vector<string> userInfos, SOCKET* sd);
+	int createUser(vector<string> userInfos);
+	void addUser(ThreadParam p, string userName);
+	string addEntete(string user);
 
 private:
 	vector<string> messages;
 	string host;
 	int port;
 	SOCKET rsock;
-	vector<Client> users;
+	map<string, Client> users;
 	SOCKADDR_IN rsin;
 	mutex verrouVectorUsers;
 	mutex verrouVectorMessages;
-	mutex verrouFichier;
+	mutex verrouFichierUsers;
+	mutex verrouFichierMessages;
 };
 
 #endif /* SERVEUR_H_ */
