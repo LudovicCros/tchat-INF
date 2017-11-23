@@ -1,1 +1,7 @@
 test$pass
+ludo$ludo
+coucou$c
+c1$c2
+l1$l1
+r1$r1
+r2$r2
