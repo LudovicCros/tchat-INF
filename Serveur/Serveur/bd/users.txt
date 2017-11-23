@@ -1,1 +1,3 @@
 test$pass
+Lolita$Lolito
+momo$shiro
