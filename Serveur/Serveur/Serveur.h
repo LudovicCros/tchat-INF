@@ -57,7 +57,6 @@ public:
 	int archiverMessage(string message);
 	void init();
 	void sendHistoric(string userName);
-	void Serveur::deconnexion(string user);
 
 private:
 	vector<string> messages;
