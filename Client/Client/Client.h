@@ -30,6 +30,7 @@ public:
 	void validIP();
 	void validPort();
 	void connexion();
+	void receptionHistorique();
 	virtual ~Client();
 
 private:
