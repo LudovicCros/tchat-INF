@@ -14,6 +14,7 @@
 const int NMAX = 200;
 const int USERMAX = 30;
 const int MAXMESSAGE = NMAX + USERMAX;
+const int NBMESSAGESMAX = 15;
 
 using namespace std;
 
@@ -52,6 +53,9 @@ public:
 	int createUser(vector<string> userInfos);
 	void addUser(ThreadParam p, string userName);
 	string addEntete(string user);
+	int archiverMessage(string message);
+	void init();
+	void sendHistoric(string userName);
 
 private:
 	vector<string> messages;
